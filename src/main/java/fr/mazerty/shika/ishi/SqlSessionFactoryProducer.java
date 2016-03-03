@@ -12,8 +12,8 @@ public class SqlSessionFactoryProducer {
 
     private static final String MYBATIS_CONFIG_PATH = "mybatis.xml";
 
-    @Produces
     @ApplicationScoped
+    @Produces
     public SqlSessionFactory produce() throws IOException {
         return new SqlSessionFactoryBuilder().build(Resources.getResourceAsStream(MYBATIS_CONFIG_PATH));
     }
