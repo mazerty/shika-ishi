@@ -1,10 +1,11 @@
 package fr.mazerty.shika.ishi;
 
 import org.mindrot.jbcrypt.BCrypt;
-import org.mybatis.cdi.Mapper;
 
+import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
 
+@ApplicationScoped
 public class UserServiceImpl implements UserService {
 
     private static final String DUMMY_HASH = "$2a$13$byD4Ftv39Z76hUfd01URsePSdaV722c7J7NcLfs6o3KdJsAwHhEjq";
@@ -12,7 +13,6 @@ public class UserServiceImpl implements UserService {
     @Inject
     private String application;
 
-    @Mapper
     @Inject
     private UserDao userDao;
 
