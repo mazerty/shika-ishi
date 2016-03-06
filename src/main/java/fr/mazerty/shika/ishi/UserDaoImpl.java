@@ -18,7 +18,7 @@ public class UserDaoImpl extends MyDao implements UserDao {
                 .on(field("ua.application_fk").equal(field("a.id")))
                 .where(field("u.email").equal(user.getEmail()))
                 .and(field("a.name").equal(application))
-                .fetchOne().into(User.class);
+                .fetchAnyInto(User.class);
     }
 
 }
