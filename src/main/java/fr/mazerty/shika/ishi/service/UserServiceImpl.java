@@ -1,5 +1,8 @@
-package fr.mazerty.shika.ishi;
+package fr.mazerty.shika.ishi.service;
 
+import fr.mazerty.shika.ishi.bean.User;
+import fr.mazerty.shika.ishi.dao.UserDao;
+import fr.mazerty.shika.ishi.exception.AuthenticationFailure;
 import org.mindrot.jbcrypt.BCrypt;
 
 import javax.enterprise.context.ApplicationScoped;

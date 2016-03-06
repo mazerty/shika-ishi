@@ -1,4 +1,4 @@
-package fr.mazerty.shika.ishi;
+package fr.mazerty.shika.ishi.dao;
 
 import org.jooq.DSLContext;
 

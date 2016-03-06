@@ -1,4 +1,4 @@
-package fr.mazerty.shika.ishi;
+package fr.mazerty.shika.ishi.vaadin;
 
 import com.vaadin.ui.TextField;
 

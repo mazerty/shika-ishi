@@ -1,8 +1,10 @@
-package fr.mazerty.shika.ishi;
+package fr.mazerty.shika.ishi.vaadin;
 
 import com.vaadin.cdi.CDIView;
 import com.vaadin.navigator.ViewChangeListener;
 import com.vaadin.ui.*;
+import fr.mazerty.shika.ishi.bean.User;
+import fr.mazerty.shika.ishi.session.Session;
 import javaslang.control.Try;
 
 import javax.inject.Inject;

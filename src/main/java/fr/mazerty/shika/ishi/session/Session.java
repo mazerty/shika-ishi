@@ -1,4 +1,8 @@
-package fr.mazerty.shika.ishi;
+package fr.mazerty.shika.ishi.session;
+
+import fr.mazerty.shika.ishi.bean.User;
+import fr.mazerty.shika.ishi.exception.AuthenticationFailure;
+import fr.mazerty.shika.ishi.service.UserService;
 
 import javax.enterprise.context.SessionScoped;
 import javax.inject.Inject;

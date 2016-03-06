@@ -1,4 +1,4 @@
-package fr.mazerty.shika.ishi;
+package fr.mazerty.shika.ishi.vaadin;
 
 import com.vaadin.annotations.PreserveOnRefresh;
 import com.vaadin.annotations.Theme;
@@ -7,6 +7,7 @@ import com.vaadin.navigator.Navigator;
 import com.vaadin.navigator.ViewChangeListener;
 import com.vaadin.server.VaadinRequest;
 import com.vaadin.ui.UI;
+import fr.mazerty.shika.ishi.session.Session;
 
 import javax.inject.Inject;
 

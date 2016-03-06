@@ -1,4 +1,4 @@
-package fr.mazerty.shika.ishi;
+package fr.mazerty.shika.ishi.cdi;
 
 import org.jooq.DSLContext;
 import org.jooq.SQLDialect;
