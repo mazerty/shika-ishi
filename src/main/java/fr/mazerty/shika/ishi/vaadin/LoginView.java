@@ -14,6 +14,9 @@ import static com.vaadin.ui.Alignment.MIDDLE_CENTER;
 import static com.vaadin.ui.Notification.Type.ERROR_MESSAGE;
 import static com.vaadin.ui.themes.ValoTheme.BUTTON_PRIMARY;
 
+/**
+ * Cette vue est automatiquement présentée lors de la connexion à l'application
+ */
 @CDIView(LoginView.VIEW_NAME)
 public class LoginView extends MyView {
 
@@ -43,7 +46,7 @@ public class LoginView extends MyView {
                 .of(bfg::getBean)
                 .andThenTry(session::login)
                 .andThen(() -> navigateTo(MyUI.MAIN_VIEW_NAME))
-                .onFailure(e -> Notification.show(e.getMessage(), ERROR_MESSAGE))
+                .onFailure(e -> Notification.show(e.getMessage(), ERROR_MESSAGE)) // TODO
         );
 
         FormLayout formLayout = new FormLayout(fldEmail, fldPassword, btnLogin);

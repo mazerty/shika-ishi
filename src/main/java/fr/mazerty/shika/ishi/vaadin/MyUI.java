@@ -11,9 +11,12 @@ import fr.mazerty.shika.ishi.session.Session;
 
 import javax.inject.Inject;
 
+/**
+ * L'UI de chaque application doit étendre cette classe abstraite afin de présenter automatique la LoginView à la connection
+ */
 @Theme("mytheme")
 @PreserveOnRefresh
-public class MyUI extends UI {
+public abstract class MyUI extends UI {
 
     public static final String MAIN_VIEW_NAME = "main";
 
@@ -35,12 +38,12 @@ public class MyUI extends UI {
 
                 if (goingToLoginView && alreadyLoggedIn) {
                     session.logOut();
-                    return true;
+                    return true; // on accepte la transition vers la loginview
                 } else if (goingToLoginView || alreadyLoggedIn) {
-                    return true;
+                    return true; // on accepte la transition vers la view demandée
                 } else {
                     navigator.navigateTo(LoginView.VIEW_NAME);
-                    return false;
+                    return false; // on refuse la transition et on redirige vers la loginview
                 }
             }
 

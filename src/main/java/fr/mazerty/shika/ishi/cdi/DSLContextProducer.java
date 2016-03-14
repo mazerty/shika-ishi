@@ -11,6 +11,9 @@ import javax.naming.InitialContext;
 import javax.naming.NamingException;
 import javax.sql.DataSource;
 
+/**
+ * Producer CDI du contexte utilisé par jOOQ pour l'accès à la base de données
+ */
 public class DSLContextProducer {
 
     private static final String DATASOURCE_JNDI_NAME = "java:/comp/env/jdbc/shika";

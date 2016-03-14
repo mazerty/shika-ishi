@@ -4,7 +4,7 @@ public class User {
 
     private Integer id;
     private String email;
-    private String password = "";
+    private String password = ""; // initialisé à "" car jbcrypt plante sur une chaîne null
 
     public Integer getId() {
         return id;
