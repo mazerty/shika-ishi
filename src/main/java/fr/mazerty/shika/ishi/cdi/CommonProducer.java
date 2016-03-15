@@ -12,12 +12,15 @@ import javax.naming.NamingException;
 import javax.sql.DataSource;
 
 /**
- * Producer CDI du contexte utilisé par jOOQ pour l'accès à la base de données
+ * Producer CDI commun à toutes les applications
  */
-public class DSLContextProducer {
+public class CommonProducer {
 
     private static final String DATASOURCE_JNDI_NAME = "java:/comp/env/jdbc/shika";
 
+    /**
+     * @return contexte utilisé par jOOQ pour l'accès à la base de données
+     */
     @ApplicationScoped
     @Produces
     public DSLContext produce() throws NamingException {
