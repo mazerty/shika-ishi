@@ -15,14 +15,14 @@ public class UserServiceImpl implements UserService {
     private static final String DUMMY_HASH = "$2a$13$byD4Ftv39Z76hUfd01URsePSdaV722c7J7NcLfs6o3KdJsAwHhEjq";
 
     @Inject
-    private String application;
+    private String applicationName;
 
     @Inject
     private UserDao userDao;
 
     @Override
     public User authenticate(User user) throws AuthenticationFailure {
-        User match = userDao.selectByEmailAndApplication(user, application);
+        User match = userDao.selectByEmailAndApplication(user, applicationName);
         if (match != null) {
             if (BCrypt.checkpw(user.getPassword(), match.getPassword())) {
                 return match;

@@ -6,8 +6,8 @@ package fr.mazerty.shika.ishi.cdi;
 public interface SpecificProducer {
 
     /**
-     * @return la String nommant l'application (utilisée dans UserServiceImpl)
+     * @return nom de l'application (utilisé dans UserServiceImpl)
      */
-    String getApplication();
+    String getApplicationName();
 
 }
