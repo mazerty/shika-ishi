@@ -15,4 +15,9 @@
         <version>1.0.0-SNAPSHOT</version>
     </parent>
 
+    <properties>
+        <jooq.codegen.schema>torii</jooq.codegen.schema>
+        <jooq.codegen.package>fr.mazerty.shika.ishi.dao.jooq</jooq.codegen.package>
+    </properties>
+
 </project>
