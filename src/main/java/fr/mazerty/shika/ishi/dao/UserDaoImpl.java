@@ -17,7 +17,7 @@ public class UserDaoImpl extends MyDao implements UserDao {
         TUserApplication ua = Tables.T_USER_APPLICATION;
         TApplication a = Tables.T_APPLICATION;
 
-        return dslContext.select().from(u)
+        return dslContext.select(u.fields()).from(u)
                 .innerJoin(ua).on(ua.USER_FK.equal(u.ID))
                 .innerJoin(a).on(a.ID.equal(ua.APPLICATION_FK))
                 .where(u.EMAIL.equal(user.getEmail()))
