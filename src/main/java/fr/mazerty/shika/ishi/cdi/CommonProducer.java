@@ -16,7 +16,7 @@ import javax.sql.DataSource;
  */
 public class CommonProducer {
 
-    private static final String DATASOURCE_JNDI_NAME = "java:/comp/env/jdbc/shika";
+    private static final String DATASOURCE_JNDI_NAME = "java:/comp/env/jdbc/postgresql";
 
     /**
      * @return contexte utilisé par jOOQ pour l'accès à la base de données
