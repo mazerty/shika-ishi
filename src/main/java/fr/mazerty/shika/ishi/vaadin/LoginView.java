@@ -1,7 +1,6 @@
 package fr.mazerty.shika.ishi.vaadin;
 
 import com.vaadin.cdi.CDIView;
-import com.vaadin.ui.Notification;
 import fr.mazerty.shika.ishi.bean.User;
 import fr.mazerty.shika.ishi.session.Session;
 import javaslang.control.Try;
@@ -9,7 +8,6 @@ import javaslang.control.Try;
 import javax.inject.Inject;
 
 import static com.vaadin.ui.Alignment.MIDDLE_CENTER;
-import static com.vaadin.ui.Notification.Type.ERROR_MESSAGE;
 
 /**
  * Cette vue est automatiquement présentée lors de la connexion à l'application
@@ -32,7 +30,7 @@ public class LoginView extends MyView {
                 .of(bfg::getBean)
                 .andThenTry(session::login)
                 .andThen(() -> navigateTo(MyUI.MAIN_VIEW_NAME))
-                .onFailure(e -> Notification.show(e.getMessage(), ERROR_MESSAGE)) // TODO
+                .onFailure(this::handleFailure)
         );
 
         setSizeFull();
