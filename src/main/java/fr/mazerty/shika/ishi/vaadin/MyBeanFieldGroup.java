@@ -10,7 +10,6 @@ public class MyBeanFieldGroup<T> extends BeanFieldGroup<T> {
         setBuffered(false);
 
         Try.of(beanType::newInstance)
-                .onFailure(Throwable::printStackTrace) // TODO
                 .andThen(this::setItemDataSource);
     }
 
