@@ -12,7 +12,7 @@ import fr.mazerty.shika.ishi.session.Session;
 import javax.inject.Inject;
 
 /**
- * L'UI de chaque application doit étendre cette classe abstraite afin de présenter automatique la LoginView à la connection
+ * L'UI de chaque application doit étendre cette classe abstraite afin de présenter automatiquement la LoginView à la connection
  */
 @Theme("mytheme")
 @PreserveOnRefresh
