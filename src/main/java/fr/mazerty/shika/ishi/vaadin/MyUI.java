@@ -7,6 +7,7 @@ import com.vaadin.navigator.Navigator;
 import com.vaadin.navigator.ViewChangeListener;
 import com.vaadin.server.VaadinRequest;
 import com.vaadin.ui.UI;
+import com.vaadin.ui.Window;
 import fr.mazerty.shika.ishi.session.Session;
 
 import javax.inject.Inject;
@@ -33,6 +34,8 @@ public abstract class MyUI extends UI {
         navigator.addViewChangeListener(new ViewChangeListener() {
             @Override
             public boolean beforeViewChange(ViewChangeEvent event) {
+                getWindows().forEach(Window::close);
+
                 boolean goingToLoginView = LoginView.VIEW_NAME.equals(event.getViewName());
                 boolean alreadyLoggedIn = session.isLoggedIn();
 
@@ -49,6 +52,8 @@ public abstract class MyUI extends UI {
 
             @Override
             public void afterViewChange(ViewChangeEvent event) {
+                MyView newView = (MyView) event.getNewView();
+                newView.getMainWindow().forEach(window -> addWindow(window));
             }
         });
 

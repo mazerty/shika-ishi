@@ -40,12 +40,10 @@ class MyLoginForm extends LoginForm {
         userNameField.focus();
 
         FormLayout formLayout = new FormLayout(userNameField, passwordField, loginButton);
+        formLayout.setSizeUndefined();
         formLayout.setMargin(true);
 
-        Panel panel = new Panel(formLayout);
-        panel.setSizeUndefined();
-
-        return panel;
+        return formLayout;
     }
 
 }

@@ -7,8 +7,6 @@ import javaslang.control.Try;
 
 import javax.inject.Inject;
 
-import static com.vaadin.ui.Alignment.MIDDLE_CENTER;
-
 /**
  * Cette vue est automatiquement présentée lors de la connexion à l'application
  */
@@ -17,25 +15,24 @@ public class LoginView extends MyView {
 
     public static final String VIEW_NAME = "login";
 
-    private final MyLoginForm myLoginForm;
-
     @Inject
     private Session session;
 
     public LoginView() {
         MyBeanFieldGroup<User> bfg = new MyBeanFieldGroup<>(User.class);
 
-        myLoginForm = new MyLoginForm(bfg);
-        myLoginForm.addLoginListener(event -> Try
+        MyLoginForm loginForm = new MyLoginForm(bfg);
+        loginForm.addLoginListener(event -> Try
                 .of(bfg::getBean)
                 .andThenTry(session::login)
                 .andThen(() -> navigateTo(MyUI.MAIN_VIEW_NAME))
                 .onFailure(this::handleFailure)
         );
 
-        setSizeFull();
-        addComponent(myLoginForm);
-        setComponentAlignment(myLoginForm, MIDDLE_CENTER);
+        MyWindow window = new MyWindow("Login", loginForm);
+        window.setClosable(false);
+        window.setResizable(false);
+        setMainWindow(window);
     }
 
 }
