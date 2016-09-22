@@ -52,8 +52,6 @@ public abstract class MyUI extends UI {
 
             @Override
             public void afterViewChange(ViewChangeEvent event) {
-                MyView newView = (MyView) event.getNewView();
-                newView.getMainWindow().forEach(window -> addWindow(window));
             }
         });
 
