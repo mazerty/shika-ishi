@@ -7,10 +7,6 @@ import static com.vaadin.ui.themes.ValoTheme.BUTTON_PRIMARY;
 
 class MyLoginForm extends LoginForm {
 
-    private static final String FLD_EMAIL_CAPTION = "Email";
-    private static final String FLD_PASSWORD_CAPTION = "Password";
-    private static final String BTN_LOGIN_CAPTION = "Log in";
-
     private MyBeanFieldGroup<User> bfg;
 
     MyLoginForm(MyBeanFieldGroup<User> bfg) {
@@ -19,17 +15,17 @@ class MyLoginForm extends LoginForm {
 
     @Override
     protected TextField createUsernameField() {
-        return bfg.buildAndBind(FLD_EMAIL_CAPTION, "email", MyTextField.class);
+        return bfg.buildAndBind("Email", "email", MyTextField.class);
     }
 
     @Override
     protected PasswordField createPasswordField() {
-        return bfg.buildAndBind(FLD_PASSWORD_CAPTION, "password", PasswordField.class);
+        return bfg.buildAndBind("Password", "password", PasswordField.class);
     }
 
     @Override
     protected Button createLoginButton() {
-        Button button = new Button(BTN_LOGIN_CAPTION);
+        Button button = new Button("Log in");
         button.addStyleName(BUTTON_PRIMARY);
 
         return button;
