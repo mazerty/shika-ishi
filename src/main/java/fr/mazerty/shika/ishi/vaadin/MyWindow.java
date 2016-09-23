@@ -5,7 +5,7 @@ import com.vaadin.ui.Window;
 
 import static com.vaadin.ui.Notification.Type.ERROR_MESSAGE;
 
-public abstract class MyWindow extends Window {
+public abstract class MyWindow extends Window implements WindowManager {
 
     public MyWindow(String caption) {
         super(caption);
