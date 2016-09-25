@@ -18,7 +18,7 @@ public class LoginView extends MyView {
 
     @Override
     public void enter(ViewChangeListener.ViewChangeEvent event) {
-        addWindow(loginWindow);
+        show(loginWindow);
     }
 
 }
