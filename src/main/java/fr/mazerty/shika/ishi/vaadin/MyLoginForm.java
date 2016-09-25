@@ -3,8 +3,6 @@ package fr.mazerty.shika.ishi.vaadin;
 import com.vaadin.ui.*;
 import fr.mazerty.shika.ishi.bean.User;
 
-import static com.vaadin.ui.themes.ValoTheme.BUTTON_PRIMARY;
-
 class MyLoginForm extends LoginForm {
 
     private MyBeanFieldGroup<User> bfg;
@@ -26,8 +24,8 @@ class MyLoginForm extends LoginForm {
 
     @Override
     protected Button createLoginButton() {
-        Button login = new Button("Log in");
-        login.addStyleName(BUTTON_PRIMARY);
+        MyButton login = new MyButton("Log in");
+        login.setPrimary();
 
         return login;
     }
