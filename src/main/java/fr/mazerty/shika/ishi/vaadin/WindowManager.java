@@ -1,11 +1,11 @@
 package fr.mazerty.shika.ishi.vaadin;
 
-import com.vaadin.ui.Window;
+interface WindowManager {
 
-public interface WindowManager {
-
-    default void addWindow(Window window) {
+    // TODO : rename
+    default void addWindow(MyWindow window) {
         MyUI.getCurrent().addWindow(window);
+        window.enter();
     }
 
 }

@@ -22,4 +22,7 @@ public abstract class MyWindow extends Window implements WindowManager {
         Notification.show(throwable.getMessage(), ERROR_MESSAGE);
     }
 
+    void enter() {
+    }
+
 }
