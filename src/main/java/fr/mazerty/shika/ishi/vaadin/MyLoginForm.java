@@ -8,7 +8,7 @@ import static com.vaadin.ui.themes.ValoTheme.BUTTON_PRIMARY;
 class MyLoginForm extends LoginForm {
 
     private MyBeanFieldGroup<User> bfg;
-    private MyTextField myTextField;
+    private MyTextField email;
 
     MyLoginForm(MyBeanFieldGroup<User> bfg) {
         this.bfg = bfg;
@@ -16,7 +16,7 @@ class MyLoginForm extends LoginForm {
 
     @Override
     protected TextField createUsernameField() {
-        return myTextField = bfg.buildAndBind("Email", "email", MyTextField.class);
+        return email = bfg.buildAndBind("Email", "email", MyTextField.class);
     }
 
     @Override
@@ -26,10 +26,10 @@ class MyLoginForm extends LoginForm {
 
     @Override
     protected Button createLoginButton() {
-        Button button = new Button("Log in");
-        button.addStyleName(BUTTON_PRIMARY);
+        Button login = new Button("Log in");
+        login.addStyleName(BUTTON_PRIMARY);
 
-        return button;
+        return login;
     }
 
     @Override
@@ -43,7 +43,7 @@ class MyLoginForm extends LoginForm {
 
     @Override
     public void focus() {
-        myTextField.focus();
+        email.focus();
     }
 
 }
