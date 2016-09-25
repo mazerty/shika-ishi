@@ -8,15 +8,18 @@ import javax.inject.Inject;
 
 public class LoginWindow extends MyWindow {
 
+    private final MyBeanFieldGroup<User> bfg;
+    private final MyLoginForm loginForm;
+
     @Inject
     private Session session;
 
     public LoginWindow() {
         super("Login");
 
-        MyBeanFieldGroup<User> bfg = new MyBeanFieldGroup<>(User.class);
+        bfg = new MyBeanFieldGroup<>(User.class);
 
-        MyLoginForm loginForm = new MyLoginForm(bfg);
+        loginForm = new MyLoginForm(bfg);
         loginForm.addLoginListener(event -> Try
                 .of(bfg::getBean)
                 .andThenTry(session::login)
@@ -27,6 +30,12 @@ public class LoginWindow extends MyWindow {
         setContent(loginForm);
         setClosable(false);
         setResizable(false);
+    }
+
+    @Override
+    void enter() {
+        bfg.setBean(new User());
+        loginForm.focus();
     }
 
 }
