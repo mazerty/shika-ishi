@@ -33,7 +33,7 @@ public class LoginWindow extends MyWindow {
     }
 
     @Override
-    void enter() {
+    protected void enter() {
         bfg.setBean(new User());
         loginForm.focus();
     }
