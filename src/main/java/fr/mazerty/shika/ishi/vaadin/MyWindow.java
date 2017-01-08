@@ -1,6 +1,7 @@
 package fr.mazerty.shika.ishi.vaadin;
 
 import com.vaadin.ui.Notification;
+import com.vaadin.ui.UI;
 import com.vaadin.ui.Window;
 
 import static com.vaadin.ui.Notification.Type.ERROR_MESSAGE;
@@ -14,10 +15,10 @@ public abstract class MyWindow extends Window implements WindowManager {
     }
 
     protected void navigateTo(String navigationState) {
-        MyUI.getCurrent().getNavigator().navigateTo(navigationState);
+        UI.getCurrent().getNavigator().navigateTo(navigationState);
     }
 
-    void handleFailure(Throwable throwable) {
+    protected void handleFailure(Throwable throwable) {
         // TODO : log exception
         Notification.show(throwable.getMessage(), ERROR_MESSAGE);
     }
