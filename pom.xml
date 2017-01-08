@@ -11,8 +11,15 @@
 
     <parent>
         <groupId>fr.mazerty</groupId>
-        <artifactId>shika-okaasan</artifactId>
+        <artifactId>core</artifactId>
         <version>1.0.0-SNAPSHOT</version>
     </parent>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.vaadin</groupId>
+            <artifactId>vaadin-server</artifactId>
+        </dependency>
+    </dependencies>
 
 </project>
