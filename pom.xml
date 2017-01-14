@@ -12,7 +12,11 @@
 
     <artifactId>shika-ishi</artifactId>
     <version>1.0.0-SNAPSHOT</version>
-    <description>Useful classes for Vaadin-based applications</description>
+    <description>
+        Useful classes for Vaadin-based applications.
+        Project's name comes from "ishi" meaning "stone" in Japanese, and "shika" meaning "deer", mascot of the Vaadin
+        company.
+    </description>
 
     <packaging>jar</packaging>
 
