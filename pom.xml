@@ -4,16 +4,17 @@
 
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>shika-ishi</artifactId>
-    <version>1.0.0-SNAPSHOT</version>
-
-    <packaging>jar</packaging>
-
     <parent>
         <groupId>fr.mazerty</groupId>
         <artifactId>core</artifactId>
         <version>1.0.0-SNAPSHOT</version>
     </parent>
+
+    <artifactId>shika-ishi</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
+    <description>Useful classes for Vaadin-based applications</description>
+
+    <packaging>jar</packaging>
 
     <dependencies>
         <dependency>
