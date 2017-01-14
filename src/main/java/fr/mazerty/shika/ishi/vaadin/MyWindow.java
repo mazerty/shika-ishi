@@ -10,7 +10,6 @@ public abstract class MyWindow extends Window implements WindowManager {
 
     public MyWindow(String caption) {
         super(caption);
-
         center();
     }
 
@@ -23,6 +22,9 @@ public abstract class MyWindow extends Window implements WindowManager {
         Notification.show(throwable.getMessage(), ERROR_MESSAGE);
     }
 
+    /**
+     * Override if some code has to be executed upon opening the window.
+     */
     protected void enter() {
     }
 
