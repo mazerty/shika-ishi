@@ -4,8 +4,7 @@ import com.vaadin.ui.Window;
 
 public abstract class MyWindow extends Window implements UiManager {
 
-    public MyWindow(String caption) {
-        super(caption);
+    public MyWindow() {
         center();
     }
 
