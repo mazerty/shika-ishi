@@ -7,13 +7,18 @@ import static com.vaadin.ui.themes.ValoTheme.BUTTON_PRIMARY;
 
 public class MyButton extends Button {
 
+    public MyButton() {
+    }
+
     public MyButton(String caption) {
         super(caption);
     }
 
-    public void setPrimary() {
+    public MyButton withPrimary() {
         addStyleName(BUTTON_PRIMARY);
         setClickShortcut(ENTER);
+
+        return this;
     }
 
 }
