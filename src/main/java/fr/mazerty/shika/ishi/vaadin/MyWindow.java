@@ -9,7 +9,7 @@ public abstract class MyWindow extends Window implements UiManager {
     }
 
     /**
-     * Override if some code has to be executed upon opening the window.
+     * Override if some code has to be executed upon showing the window.
      */
     protected void enter() {
     }
