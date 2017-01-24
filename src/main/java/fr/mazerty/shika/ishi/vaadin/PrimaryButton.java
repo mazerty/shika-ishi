@@ -5,20 +5,16 @@ import com.vaadin.ui.Button;
 import static com.vaadin.event.ShortcutAction.KeyCode.ENTER;
 import static com.vaadin.ui.themes.ValoTheme.BUTTON_PRIMARY;
 
-public class MyButton extends Button {
+public class PrimaryButton extends Button {
 
-    public MyButton() {
-    }
-
-    public MyButton(String caption) {
-        super(caption);
-    }
-
-    public MyButton withPrimary() {
+    public PrimaryButton() {
         addStyleName(BUTTON_PRIMARY);
         setClickShortcut(ENTER);
+    }
 
-        return this;
+    public PrimaryButton(String caption) {
+        this();
+        setCaption(caption);
     }
 
 }
