@@ -5,6 +5,9 @@ import com.vaadin.ui.Button;
 import static com.vaadin.event.ShortcutAction.KeyCode.ENTER;
 import static com.vaadin.ui.themes.ValoTheme.BUTTON_PRIMARY;
 
+/**
+ * Custom {@link Button} with "primary" style and behavior
+ */
 public class PrimaryButton extends Button {
 
     public PrimaryButton() {

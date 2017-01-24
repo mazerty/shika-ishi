@@ -4,6 +4,9 @@ import com.vaadin.navigator.View;
 import com.vaadin.navigator.ViewChangeListener;
 import com.vaadin.ui.VerticalLayout;
 
+/**
+ * Common structure for the views
+ */
 public abstract class MyView extends VerticalLayout implements View, UiManager {
 
     /**
