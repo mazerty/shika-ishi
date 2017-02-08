@@ -3,6 +3,7 @@ package fr.mazerty.shika.ishi.vaadin;
 import com.vaadin.data.util.BeanItemContainer;
 import com.vaadin.ui.Grid;
 
+import java.util.Collection;
 import java.util.stream.IntStream;
 
 /**
@@ -10,8 +11,14 @@ import java.util.stream.IntStream;
  */
 public class MyGrid<T> extends Grid {
 
+    private BeanItemContainer<T> beanItemContainer;
+
+    @SuppressWarnings("unchecked")
     public MyGrid(Class<T> beanType) {
         super(new BeanItemContainer<>(beanType));
+
+        // stored here once and for all
+        beanItemContainer = (BeanItemContainer<T>) getContainerDataSource();
     }
 
     /**
@@ -20,6 +27,13 @@ public class MyGrid<T> extends Grid {
     public void setColumnHeaderCaptions(String... captions) {
         IntStream.range(0, captions.length)
                 .forEach(i -> getColumns().get(i).setHeaderCaption(captions[i]));
+    }
+
+    /**
+     * @see BeanItemContainer#addAll(Collection)
+     */
+    public void addAll(Collection<? extends T> collection) {
+        beanItemContainer.addAll(collection);
     }
 
 }
