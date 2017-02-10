@@ -7,9 +7,20 @@ import com.vaadin.ui.UI;
  */
 interface UiManager {
 
+    /**
+     * Displays a {@link MyWindow} or a {@link MyBeanWindow} without a bean instance, eg. in creation mode.
+     */
     default void show(MyWindow window) {
         UI.getCurrent().addWindow(window);
         window.enter();
+    }
+
+    /**
+     * Displays a {@link MyBeanWindow} with a bean instance, eg. in update mode.
+     */
+    default <T> void show(MyBeanWindow<T> window, T bean) {
+        UI.getCurrent().addWindow(window);
+        window.enter(bean);
     }
 
     default void navigateTo(String navigationState) {
