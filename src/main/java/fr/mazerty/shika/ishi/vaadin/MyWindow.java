@@ -3,7 +3,9 @@ package fr.mazerty.shika.ishi.vaadin;
 import com.vaadin.ui.Window;
 
 /**
- * Common structure for the popups
+ * Common structure for the popups.
+ *
+ * @see UiManager
  */
 public abstract class MyWindow extends Window implements UiManager {
 
