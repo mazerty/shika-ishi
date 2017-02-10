@@ -36,4 +36,11 @@ public class MyGrid<T> extends Grid {
         beanItemContainer.addAll(collection);
     }
 
+    /**
+     * Adds an {@link com.vaadin.event.ItemClickEvent.ItemClickListener} that switches on and off the details of the clicked item
+     */
+    public void addItemClickToDetailsListener() {
+        addItemClickListener(event -> setDetailsVisible(event.getItemId(), !isDetailsVisible(event.getItemId())));
+    }
+
 }
