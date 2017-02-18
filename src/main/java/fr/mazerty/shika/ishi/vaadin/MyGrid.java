@@ -30,9 +30,10 @@ public class MyGrid<T> extends Grid {
     }
 
     /**
-     * @see BeanItemContainer#addAll(Collection)
+     * Replaces the contents of the grid by those of the given collection
      */
-    public void addAll(Collection<? extends T> collection) {
+    public void setItems(Collection<? extends T> collection) {
+        beanItemContainer.removeAllItems();
         beanItemContainer.addAll(collection);
     }
 
