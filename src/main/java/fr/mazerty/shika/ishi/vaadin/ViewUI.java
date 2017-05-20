@@ -1,5 +1,8 @@
 package fr.mazerty.shika.ishi.vaadin;
 
+import com.vaadin.annotations.PreserveOnRefresh;
+import com.vaadin.annotations.Theme;
+import com.vaadin.cdi.CDIUI;
 import com.vaadin.navigator.Navigator;
 import com.vaadin.server.VaadinRequest;
 import com.vaadin.ui.UI;
@@ -7,6 +10,9 @@ import com.vaadin.ui.UI;
 /**
  * View-based {@link UI} with a default {@link Navigator}.
  */
+@CDIUI("")
+@Theme("mytheme")
+@PreserveOnRefresh
 public abstract class ViewUI extends UI {
 
     protected Navigator navigator;
