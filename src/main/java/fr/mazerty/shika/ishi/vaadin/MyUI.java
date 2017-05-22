@@ -16,7 +16,7 @@ import javax.inject.Inject;
 @CDIUI("")
 @Theme("mytheme")
 @PreserveOnRefresh
-public abstract class ViewUI extends UI {
+public abstract class MyUI extends UI {
 
     @Inject
     private CDIViewProvider cdiViewProvider;
