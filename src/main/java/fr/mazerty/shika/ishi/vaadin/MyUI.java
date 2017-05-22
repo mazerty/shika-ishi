@@ -11,7 +11,7 @@ import com.vaadin.ui.UI;
 import javax.inject.Inject;
 
 /**
- * View-based {@link UI} with a default {@link Navigator}.
+ * Custom {@link UI} with default {@link Navigator}, theme and {@link CDIViewProvider}.
  */
 @CDIUI("")
 @Theme("mytheme")
@@ -29,6 +29,10 @@ public abstract class MyUI extends UI {
         navigator = new Navigator(this, this);
         navigator.addProvider(cdiViewProvider);
         navigator.addViewChangeListener(new WindowCloserViewChangeListener());
+
+        navigator.navigateTo(getDefaultView());
     }
+
+    protected abstract String getDefaultView();
 
 }
